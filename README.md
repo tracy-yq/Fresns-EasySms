@@ -1,0 +1,2 @@
+# Fresns-EasySms
+Fresns Plugin
