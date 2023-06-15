@@ -1,0 +1,19 @@
+{
+    "name": "fresns/easy-sms",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Tracy Yuan",
+            "homepage": "https://github.com/tracy-yq",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "overtrue/easy-sms": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Plugins\\EasySms\\": "app"
+        }
+    }
+}

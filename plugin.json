@@ -1,0 +1,20 @@
+{
+    "fskey": "EasySms",
+    "type": 1,
+    "name": "Easy SMS",
+    "description": "Fresns 官方开发的支持多家服务商的短信插件。",
+    "author": "Fresns",
+    "authorLink": "https://fresns.org",
+    "version": "2.2.0",
+    "scene": [
+        "sendSms"
+    ],
+    "accessPath": null,
+    "settingsPath": "/easy-sms/setting",
+    "providers": [
+        "Plugins\\EasySms\\Providers\\EasySmsServiceProvider",
+        "Plugins\\EasySms\\Providers\\CmdWordServiceProvider"
+    ],
+    "autoloadFiles": [],
+    "aliases": {}
+}
