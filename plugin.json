@@ -3,8 +3,8 @@
     "type": 1,
     "name": "Easy SMS",
     "description": "Fresns 官方开发的支持多家服务商的短信插件。",
-    "author": "Fresns",
-    "authorLink": "https://fresns.org",
+    "author": "Tracy",
+    "authorLink": "https://marketplace.fresns.com/developer/tracy",
     "version": "2.2.0",
     "scene": [
         "sendSms"
