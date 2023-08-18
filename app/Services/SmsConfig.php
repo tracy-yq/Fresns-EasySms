@@ -16,6 +16,7 @@ class SmsConfig
         0 => \Overtrue\EasySms\Gateways\ErrorlogGateway::class, // 阿里云短信
         1 => \Overtrue\EasySms\Gateways\AliyunGateway::class, // 阿里云短信
         2 => \Overtrue\EasySms\Gateways\QcloudGateway::class, // 腾讯云短信
+        3 => \Overtrue\EasySms\Gateways\VolcengineGateway::class, // 火山引擎
     ];
 
     public function getValueByConfigItemKey(string $field)

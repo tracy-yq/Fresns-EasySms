@@ -19,7 +19,7 @@ return [
 
         // 默认可用的发送网关
         'gateways' => [
-            'aliyun', 'qcloud',
+            'aliyun', 'qcloud','volcengine',
         ],
     ],
     // 可用的网关配置
@@ -37,6 +37,13 @@ return [
             'secret_key' => '',
             'secret_id' => '',
             'sign_name' => '',
+        ],
+        'volcengine' => [
+            'access_key_id' => '',
+            'access_key_secret' => '',
+            'region_id' => 'cn-north-1',
+            'sign_name' => '',
+            'sms_account' => '',
         ],
     ],
 ];

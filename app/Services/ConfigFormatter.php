@@ -35,4 +35,15 @@ class ConfigFormatter
             'sign_name' => $signName,
         ];
     }
+
+    public function formatVolcengineGatewayConfig(string $signName)
+    {
+        return [
+            'access_key_id' =>$this->smsSystemConfig->getKeyId(),
+            'access_key_secret' => $this->smsSystemConfig->getKeySecret(),
+            'region_id' => 'cn-north-1',
+            'sign_name' => $signName,
+            'sms_account' => $this->smsSystemConfig->getAppId(),
+        ];
+    }
 }

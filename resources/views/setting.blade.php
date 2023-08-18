@@ -49,6 +49,7 @@
                                 <select class="form-select" id="easysms_type" name="easysms_type">
                                     <option value="1" {{$easysms_type == 1 ? 'selected' : ''}}>阿里云</option>
                                     <option value="2" {{$easysms_type == 2 ? 'selected' : ''}}>腾讯云</option>
+                                    <option value="3" {{$easysms_type == 3 ? 'selected' : ''}}>火山引擎</option>
                                 </select>
                             </div>
                             <div class="col-lg-5 form-text pt-1"><i class="bi bi-info-circle"></i> 选择服务商填写对应的 Key 配置</div>
@@ -66,7 +67,7 @@
                         <div class="row mb-4">
                             <label class="col-lg-2 col-form-label text-lg-end">SDK App ID:</label>
                             <div class="col-lg-5"><input type="text" class="form-control" id="easysms_sdk_appid" name="easysms_sdk_appid" placeholder="SDK AppId" value="{{$easysms_sdk_appid}}"></div>
-                            <div class="col-lg-5 form-text pt-1"><i class="bi bi-info-circle"></i> 仅腾讯云使用，阿里云忽略</div>
+                            <div class="col-lg-5 form-text pt-1"><i class="bi bi-info-circle"></i> 腾讯云和火山引擎使用，阿里云忽略。火山引擎为消息组 ID</div>
                         </div>
                         <div class="row mb-4">
                             <label class="col-lg-2 col-form-label text-lg-end">匹配验证码模板:</label>
