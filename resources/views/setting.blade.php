@@ -21,11 +21,11 @@
                 <div class="row mb-2">
                     <div class="col-7">
                         <h3>Easy SMS 短信插件 <span class="badge bg-secondary fs-9">{{ $version }}</span></h3>
-                        <p class="text-secondary">Fresns 官方开发的短信服务插件。</p>
+                        <p class="text-secondary">目前支持阿里云、腾讯云、火山引擎三家服务商的短信服务。</p>
                     </div>
                     <div class="col-5">
                         <div class="input-group mt-2 mb-4 justify-content-lg-end px-1" role="group">
-                            <a class="btn btn-outline-secondary" href="https://gitee.com/fresns/extensions/tree/master/EasySms" target="_blank" role="button"><i class="bi bi-git"></i> Gitee</a>
+                            <a class="btn btn-outline-secondary" href="https://github.com/tracy-yq/Fresns-EasySms" target="_blank" role="button"><i class="bi bi-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
