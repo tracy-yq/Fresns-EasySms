@@ -1,11 +1,10 @@
 {
     "fskey": "EasySms",
-    "type": 1,
     "name": "Easy SMS",
     "description": "目前支持阿里云、腾讯云、火山引擎三家服务商的短信服务。",
     "author": "Tracy",
     "authorLink": "https://marketplace.fresns.com/developer/tracy",
-    "version": "2.3.1",
+    "version": "2.3.2",
     "scene": [
         "sendSms"
     ],
