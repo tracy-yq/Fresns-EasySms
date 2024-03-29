@@ -4,12 +4,12 @@
     "authors": [
         {
             "name": "Tracy",
-            "homepage": "https://github.com/tracy-yq",
+            "homepage": "https://marketplace.fresns.com/developer/tracy",
             "role": "Developer"
         }
     ],
     "require": {
-        "overtrue/easy-sms": "^2.5"
+        "overtrue/easy-sms": "^2.6"
     },
     "autoload": {
         "psr-4": {

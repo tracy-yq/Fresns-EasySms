@@ -61,7 +61,6 @@ class EasySmsController extends Controller
             ], [
                 'item_value' => $value,
                 'item_type' => $itemType,
-                'item_tag' => 'easysms',
             ]);
 
             $data[$config->item_key] = $config->item_value;

@@ -7,7 +7,7 @@
  */
 
 use Illuminate\Support\Facades\Route;
-use Plugins\EasySms\Http\Controllers as ApiController;
+use Plugins\EasySms\Http\Controllers\EasySmsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +21,5 @@ use Plugins\EasySms\Http\Controllers as ApiController;
 */
 
 Route::prefix('easy-sms')->middleware(['api', 'auth'])->group(function () {
-    Route::get('/', [ApiController\EasySmsController::class, 'index']);
+    Route::get('/', [EasySmsController::class, 'index']);
 });

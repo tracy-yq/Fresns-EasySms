@@ -7,9 +7,9 @@
     <meta name="author" content="Fresns" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Easy SMS 短信插件</title>
-    <link rel="stylesheet" href="{{ @asset('/static/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ @asset('/static/css/bootstrap-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ @asset('/static/css/fresns-panel.css') }}">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/css/fresns-panel.css">
 </head>
 
 <body>
@@ -105,8 +105,8 @@
         </div>
     </div>
 
-    <script src="{{ @asset('/static/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ @asset('/static/js/jquery.min.js') }}"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -135,7 +135,6 @@
                     },
                     success: function (res) {
                         console.log("success ", res)
-                        $("#save_btn").prop("disabled", false);
                         $("#fresnsToast").show().delay(2000).fadeOut();
                         $("#save_msg").text("保存成功");
                         $("#fresnsToast").addClass("show");
@@ -145,7 +144,10 @@
                         $("#save_msg").text("保存失败");
                         $("#fresnsToast").addClass("show");
                         console.log("error", e)
-                    }
+                    },
+                    complete: function (e) {
+                        $("#save_btn").prop("disabled", false);
+                    },
                 });
             });
         });

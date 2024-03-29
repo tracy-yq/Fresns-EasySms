@@ -7,7 +7,7 @@
  */
 
 use Illuminate\Support\Facades\Route;
-use Plugins\EasySms\Http\Controllers as Controller;
+use Plugins\EasySms\Http\Controllers\EasySmsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ use Plugins\EasySms\Http\Controllers as Controller;
 |
 */
 
-Route::prefix('easy-sms')->middleware(['panel', 'panelAuth'])->group(function () {
-    Route::get('/setting', [Controller\EasySmsController::class, 'setting'])->name('EasySms.setting');
-    Route::post('/saveSetting', [Controller\EasySmsController::class, 'saveSetting'])->name('EasySms.saveSetting');
+Route::prefix('easy-sms')->name('EasySms.')->middleware(['panel', 'panelAuth'])->group(function () {
+    Route::get('/setting', [EasySmsController::class, 'setting'])->name('setting');
+    Route::post('/saveSetting', [EasySmsController::class, 'saveSetting'])->name('saveSetting');
 });

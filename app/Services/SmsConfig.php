@@ -8,15 +8,20 @@
 
 namespace Plugins\EasySms\Services;
 
+use App\Helpers\StrHelper;
 use App\Models\Config;
+use Overtrue\EasySms\Gateways\ErrorlogGateway;
+use Overtrue\EasySms\Gateways\AliyunGateway;
+use Overtrue\EasySms\Gateways\QcloudGateway;
+use Overtrue\EasySms\Gateways\VolcengineGateway;
 
 class SmsConfig
 {
     protected $gateways = [
-        0 => \Overtrue\EasySms\Gateways\ErrorlogGateway::class, // 阿里云短信
-        1 => \Overtrue\EasySms\Gateways\AliyunGateway::class, // 阿里云短信
-        2 => \Overtrue\EasySms\Gateways\QcloudGateway::class, // 腾讯云短信
-        3 => \Overtrue\EasySms\Gateways\VolcengineGateway::class, // 火山引擎
+        0 => ErrorlogGateway::class, // 阿里云短信
+        1 => AliyunGateway::class, // 阿里云短信
+        2 => QcloudGateway::class, // 腾讯云短信
+        3 => VolcengineGateway::class, // 火山引擎
     ];
 
     public function getValueByConfigItemKey(string $field)
@@ -73,30 +78,11 @@ class SmsConfig
 
     public function getCodeTemplate(string $templateId, string $langTag)
     {
-        $templateBlade = $this->getValueByConfigItemKey('verifycode_template'.$templateId);
+        $templateValue = $this->getValueByConfigItemKey('verifycode_template'.$templateId);
 
-        $templateData = $templateBlade;
+        $templates = $templateValue['sms']['templates'] ?? [];
 
-        $sms = [];
-        if ($templateData) {
-            foreach ($templateData as $t) {
-                if ($t['type'] == 'sms') {
-                    $sms = $t['template'];
-                }
-            }
-        }
-
-        $data = [];
-        foreach ($sms as $s) {
-            if ($s['langTag'] == $langTag) {
-                $data['sign_name'] = $s['signName'];
-                $data['template'] = $s['templateCode'];
-                $data['code_param'] = $s['codeParam'];
-                $data['data'][$s['codeParam']] = '';
-            }
-        }
-
-        return $data;
+        return StrHelper::languageContent($templates, $langTag);
     }
 
     public function getVerifyCodesTemplate(string $templateCode, string $langTag = 'en')

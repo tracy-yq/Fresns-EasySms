@@ -8,6 +8,7 @@
 
 namespace Plugins\EasySms\Services;
 
+use App\Helpers\StrHelper;
 use App\Models\VerifyCode;
 use Fresns\CmdWordManager\Exceptions\Constants\ExceptionConstant;
 use Overtrue\EasySms\EasySms;
@@ -20,6 +21,8 @@ class SmsService
     use \Fresns\CmdWordManager\Traits\CmdWordResponseTrait;
 
     protected $smsSystemConfig;
+
+    protected $configFormatter;
 
     protected $langTag = 'en';
 
@@ -74,15 +77,15 @@ class SmsService
         $to = $this->getNumber($smsDTO->account, $smsDTO->countryCode);
 
         // 验证码
-        $code = rand(100000, 999999);
+        $code = StrHelper::generateDigital();
 
         // 发送短信
         try {
-            $response = $this->sms($template['sign_name'])->send($to, [
+            $response = $this->sms($template['signName'])->send($to, [
                 'content' => $data['content'] ?? '您的验证码是'.$code,
-                'template' => $template['template'],
+                'template' => $template['templateCode'],
                 'data' => [
-                    $template['code_param'] => $code,
+                    $template['codeParam'] => $code,
                 ],
             ], [$gateway]);
         } catch (\Throwable $e) {
@@ -101,11 +104,11 @@ class SmsService
         $phone = $to->getIDDCode().$to->getNumber();
 
         $data = [
+            'type' => VerifyCode::TYPE_SMS,
             'account' => $phone,
             'template_id' => $templateId,
-            'type' => 2,
             'code' => $code,
-            'expired_at' => now()->addMinutes(10)->toDateTimeString(),
+            'expired_at' => now()->addMinutes(10),
         ];
 
         $verifyCode = VerifyCode::create($data);

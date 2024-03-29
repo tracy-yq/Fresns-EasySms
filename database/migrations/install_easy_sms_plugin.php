@@ -16,25 +16,21 @@ return new class extends Migration
             'item_key' => 'easysms_type',
             'item_value' => '1',
             'item_type' => 'number',
-            'item_tag' => 'easysms',
         ],
         [
             'item_key' => 'easysms_keyid',
             'item_value' => '',
             'item_type' => 'string',
-            'item_tag' => 'easysms',
         ],
         [
             'item_key' => 'easysms_keysecret',
             'item_value' => '',
             'item_type' => 'string',
-            'item_tag' => 'easysms',
         ],
         [
             'item_key' => 'easysms_sdk_appid',
             'item_value' => '',
             'item_type' => 'string',
-            'item_tag' => 'easysms',
         ],
         [
             'item_key' => 'easysms_linked',
@@ -43,7 +39,6 @@ return new class extends Migration
                 'other' => 'en',
             ],
             'item_type' => 'object',
-            'item_tag' => 'easysms',
         ],
     ];
 
