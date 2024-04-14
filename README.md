@@ -60,7 +60,7 @@
 
 ### 功能介绍
 
-- 验证码短信模板配置 [https://docs.fresns.cn/database/keyname/send.html#%E9%AA%8C%E8%AF%81%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE](https://docs.fresns.cn/database/keyname/send.html#%E9%AA%8C%E8%AF%81%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE)
+- 验证码短信模板配置 [https://docs.fresns.com/zh-Hans/open-source/configs/panel/send.html#%E9%AA%8C%E8%AF%81%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE](https://docs.fresns.com/zh-Hans/open-source/configs/panel/send.html#%E9%AA%8C%E8%AF%81%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE)
 - 根据国际区号判断是国内短信还是国际。
 - 支持 `sendCode` 命令字
     - 1、接收到命令字请求后，判断配置表 `easysms_type` 类型，决定发哪家短信；

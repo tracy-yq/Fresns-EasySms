@@ -9,7 +9,7 @@
 namespace Plugins\EasySms\Services;
 
 use App\Helpers\StrHelper;
-use App\Models\VerifyCode;
+use App\Models\TempVerifyCode;
 use Fresns\CmdWordManager\Exceptions\Constants\ExceptionConstant;
 use Overtrue\EasySms\EasySms;
 use Overtrue\EasySms\PhoneNumber;
@@ -104,14 +104,14 @@ class SmsService
         $phone = $to->getIDDCode().$to->getNumber();
 
         $data = [
-            'type' => VerifyCode::TYPE_SMS,
+            'type' => TempVerifyCode::TYPE_SMS,
             'account' => $phone,
             'template_id' => $templateId,
             'code' => $code,
             'expired_at' => now()->addMinutes(10),
         ];
 
-        $verifyCode = VerifyCode::create($data);
+        $verifyCode = TempVerifyCode::create($data);
 
         return $verifyCode;
     }
