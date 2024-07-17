@@ -11,8 +11,7 @@ namespace Plugins\EasySms\DTO;
 use App\Fresns\Words\Basic\DTO\SendCodeDTO;
 
 /**
- * @property-read string sence
- * @property-read string countryCode
+ * @property-read string countryCallingCode
  * @property-read string phoneNumber
  * @property-read string signName
  * @property-read string templateCode
@@ -27,10 +26,10 @@ class SmsSendCodeDTO extends SendCodeDTO
     {
         return [
             'type' => ['required', 'in:1,2'],
-            'account' => ['required', 'string'],
-            'countryCode' => ['required_if:type,2', 'integer'],
             'templateId' => ['required', 'integer'],
             'langTag' => ['nullable', 'string'],
+            'account' => ['required', 'string'],
+            'countryCallingCode' => ['required_if:type,2', 'integer'],
         ];
     }
 

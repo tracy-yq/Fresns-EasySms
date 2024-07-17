@@ -57,7 +57,7 @@ class SmsService
     {
         $smsDTO = new SmsSendCodeDTO($smsDTO);
         // 国际区号匹配语言标签 easysms_linked
-        $this->langTag = $this->smsSystemConfig->getLangTagOfEasySmsLinked($smsDTO->countryCode);
+        $this->langTag = $this->smsSystemConfig->getLangTagOfEasySmsLinked($smsDTO->countryCallingCode);
 
         // 模板
         $template = $this->smsSystemConfig->getCodeTemplate($smsDTO->templateId, $this->langTag);
@@ -74,7 +74,7 @@ class SmsService
         $gateway = $this->smsSystemConfig->getEasySmsGatewayName();
 
         // 发信目标
-        $to = $this->getNumber($smsDTO->account, $smsDTO->countryCode);
+        $to = $this->getNumber($smsDTO->account, $smsDTO->countryCallingCode);
 
         // 验证码
         $code = StrHelper::generateDigital();
@@ -127,7 +127,7 @@ class SmsService
         $gateway = $this->smsSystemConfig->getEasySmsGatewayName();
 
         // 发信目标
-        $to = $this->getNumber($smsDTO->phoneNumber, $smsDTO->countryCode);
+        $to = $this->getNumber($smsDTO->phoneNumber, $smsDTO->countryCallingCode);
 
         // 发送短信
         try {

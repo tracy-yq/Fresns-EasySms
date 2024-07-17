@@ -125,16 +125,16 @@ class SmsConfig
     /**
      * 国际区号匹配语言标签 easysms_linked.
      *
-     * @param  int|null  $countryCode
+     * @param  int|null  $countryCallingCode
      * @return string
      */
-    public function getLangTagOfEasySmsLinked(?int $countryCode = null): string
+    public function getLangTagOfEasySmsLinked(?int $countryCallingCode = null): string
     {
-        $countryCode = $countryCode ?? 'other';
+        $countryCallingCode = $countryCallingCode ?? 'other';
 
         $aqSmsLinked = $this->getEasySmsLinked();
 
-        return $aqSmsLinked[$countryCode] ?? 'en';
+        return $aqSmsLinked[$countryCallingCode] ?? 'en';
     }
 
     /**

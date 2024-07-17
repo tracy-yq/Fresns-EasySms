@@ -77,7 +77,7 @@
 
 | 命令字参数 | 腾讯云参数 | 腾讯云参数示例 | 阿里云参数 | 阿里云参数示例 |
 | --- | --- | --- | --- | --- |
-| countryCode |  | 86 |  | 86 |
+| countryCallingCode |  | 86 |  | 86 |
 | phoneNumber | PhoneNumberSet | 13900120012 | PhoneNumbers | 13900120012 |
 | signName | SignName | Fresns | SignName | Fresns |
 | templateCode | TemplateId | 1145184 | TemplateCode | SMS_225391766 |

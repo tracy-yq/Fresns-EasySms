@@ -3,17 +3,17 @@
     "name": "Easy SMS",
     "description": "目前支持阿里云、腾讯云、火山引擎三家服务商的短信服务。",
     "author": "Tracy",
-    "authorLink": "https://marketplace.fresns.com/developer/tracy",
-    "version": "2.4.0",
-    "panelUsages": [
-        "sendSms"
-    ],
-    "accessPath": null,
-    "settingsPath": "/easy-sms/setting",
+    "website": "https://marketplace.fresns.com/developer/tracy",
+    "version": "2.4.2",
     "providers": [
         "Plugins\\EasySms\\Providers\\EasySmsServiceProvider",
         "Plugins\\EasySms\\Providers\\CmdWordServiceProvider"
     ],
     "autoloadFiles": [],
-    "aliases": {}
+    "aliases": {},
+    "panelUsages": [
+        "sendSms"
+    ],
+    "accessPath": null,
+    "settingsPath": "/easy-sms/setting"
 }
