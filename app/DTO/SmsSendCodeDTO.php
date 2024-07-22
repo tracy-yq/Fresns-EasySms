@@ -12,7 +12,7 @@ use App\Fresns\Words\Basic\DTO\SendCodeDTO;
 
 /**
  * @property-read string countryCallingCode
- * @property-read string phoneNumber
+ * @property-read string purePhone
  * @property-read string signName
  * @property-read string templateCode
  * @property-read string templateParam

@@ -127,7 +127,7 @@ class SmsService
         $gateway = $this->smsSystemConfig->getEasySmsGatewayName();
 
         // 发信目标
-        $to = $this->getNumber($smsDTO->phoneNumber, $smsDTO->countryCallingCode);
+        $to = $this->getNumber($smsDTO->purePhone, $smsDTO->countryCallingCode);
 
         // 发送短信
         try {

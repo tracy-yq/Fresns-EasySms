@@ -4,7 +4,7 @@
     "description": "目前支持阿里云、腾讯云、火山引擎三家服务商的短信服务。",
     "author": "Tracy",
     "website": "https://marketplace.fresns.com/developer/tracy",
-    "version": "2.4.2",
+    "version": "2.4.3",
     "providers": [
         "Plugins\\EasySms\\Providers\\EasySmsServiceProvider",
         "Plugins\\EasySms\\Providers\\CmdWordServiceProvider"

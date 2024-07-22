@@ -12,7 +12,7 @@ use App\Fresns\Words\Send\DTO\SendSmsDTO;
 
 /**
  * @property-read int countryCallingCode
- * @property-read int phoneNumber
+ * @property-read int purePhone
  * @property-read string signName
  * @property-read string templateCode
  * @property-read string templateParam
@@ -26,7 +26,7 @@ class SmsDTO extends SendSmsDTO
     {
         return [
             'countryCallingCode' => ['required', 'integer'],
-            'phoneNumber' => ['required', 'integer'],
+            'purePhone' => ['required', 'integer'],
             'signName' => ['nullable', 'string'],
             'templateCode' => ['required', 'string'],
             'templateParam' => ['nullable', 'string'],
